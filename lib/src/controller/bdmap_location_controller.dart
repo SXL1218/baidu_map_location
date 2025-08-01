@@ -134,7 +134,7 @@ class GeofenceFlutterPlugin {
 
   //iOS端使用地理围栏功能需要在工程中配置App registers for location updates权限。
   //添加圆形围栏
-  void addCircleRegion(Map regionMap) async {
+  Future addCircleRegion(Map regionMap) async {
     BMFLocationDispatcherFactory.instance.geofenceDispatcher
         .addCircleGeofence(_channel, regionMap);
   }
@@ -181,7 +181,7 @@ class GeofenceFlutterPlugin {
   }
 
   //移除全部围栏
-  void removeAllGeofence() async {
+  Future removeAllGeofence() async {
     return BMFLocationDispatcherFactory.instance.geofenceDispatcher
         .removeAllGeofence(_channel);
   }
